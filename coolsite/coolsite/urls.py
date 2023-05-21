@@ -16,11 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from women.views import index, categories
+from women.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('women/', include('women.urls')),
+    path('', include('women.urls')),
 ]
 
 # будет добавляться к домену нашего сайта - http://127.0.0.1:8000/women/
+
+
+handler404 = pageNotFound
