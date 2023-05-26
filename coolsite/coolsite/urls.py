@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+
 from women.views import *
+from coolsite import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +28,7 @@ urlpatterns = [
 
 # будет добавляться к домену нашего сайта - http://127.0.0.1:8000/women/
 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = pageNotFound
