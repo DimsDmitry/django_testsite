@@ -11,3 +11,5 @@ class Women(models.Model):
     # времени при добавлении записи, и больше меняться не будет
     time_update = models.DateTimeField(auto_now=True) #auto_now = True - поле меняется каждый раз при изменении записи
     is_published = models.BooleanField(default=True)
+
+
